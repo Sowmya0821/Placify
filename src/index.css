@@ -1,0 +1,609 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   PLACIFY — Design System & Theme Configuration
+   Tailwind CSS v4 · Modern SaaS Aesthetic
+   ============================================================ */
+
+:root {
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --secondary: #8B5CF6;
+  --secondary-hover: #7C3AED;
+  --accent: #06B6D4;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --surface-50: #F8FAFC;
+  --surface-100: #F1F5F9;
+  --surface-200: #E2E8F0;
+  --surface-300: #CBD5E1;
+  --surface-400: #94A3B8;
+  --surface-500: #64748B;
+  --surface-600: #475569;
+  --surface-700: #334155;
+  --surface-800: #1E293B;
+  --surface-900: #0F172A;
+  --surface-950: #F8FAFC;
+  
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --card-border: rgba(226, 232, 240, 0.9);
+  --text-main: #0F172A;
+}
+
+.dark {
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  --primary: #6366F1;
+  --primary-hover: #4F46E5;
+  --secondary: #8B5CF6;
+  --secondary-hover: #7C3AED;
+  --accent: #22D3EE;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --surface-50: #0B1020;
+  --surface-100: #151B2D;
+  --surface-200: #1B2338;
+  --surface-300: #222B45;
+  --surface-400: #2C3854;
+  --surface-500: #4A5B7F;
+  --surface-600: #64748B;
+  --surface-700: #94A3B8;
+  --surface-800: #CBD5E1;
+  --surface-900: #F8FAFC;
+  --surface-950: #0B1020;
+  
+  --card-bg: rgba(21, 27, 45, 0.94);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #F8FAFC;
+}
+
+
+@theme {
+  /* ── Core Colors ── */
+  --color-primary-50: var(--surface-900);
+  --color-primary-100: var(--surface-800);
+  --color-primary-200: var(--surface-700);
+  --color-primary-350: var(--surface-600);
+  --color-primary-400: var(--primary);
+  --color-primary-500: var(--primary);
+  --color-primary-600: var(--primary-hover);
+  --color-primary-700: var(--primary-hover);
+  --color-primary-800: var(--surface-800);
+  --color-primary-900: var(--surface-900);
+  --color-primary-950: var(--surface-950);
+
+  /* ── Neutral Surface ── */
+  --color-surface-50: var(--surface-50);
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-surface-300: var(--surface-300);
+  --color-surface-400: var(--surface-400);
+  --color-surface-500: var(--surface-500);
+  --color-surface-600: var(--surface-600);
+  --color-surface-700: var(--surface-700);
+  --color-surface-800: var(--surface-800);
+  --color-surface-900: var(--surface-900);
+  --color-surface-950: var(--surface-950);
+
+  /* ── Semantic Colors ── */
+  --color-success-light: var(--success);
+  --color-success: var(--success);
+  --color-success-dark: var(--success);
+
+  --color-warning-light: var(--warning);
+  --color-warning: var(--warning);
+  --color-warning-dark: var(--warning);
+
+  --color-danger-light: var(--danger);
+  --color-danger: var(--danger);
+  --color-danger-dark: var(--danger);
+
+  --color-info-light: var(--accent);
+  --color-info: var(--accent);
+  --color-info-dark: var(--accent);
+
+  /* ── Custom Cards & Borders ── */
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-text-main: var(--text-main);
+
+  /* ── Accessibility Semantic Text Colors ── */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* ── Overrides for high contrast and accessibility ── */
+  --color-gray-950: var(--surface-950);
+  --color-gray-900: var(--text-primary);
+  --color-gray-800: var(--text-secondary);
+  --color-gray-750: var(--text-secondary);
+  --color-gray-700: var(--text-secondary);
+  --color-gray-650: var(--text-muted);
+  --color-gray-600: var(--text-muted);
+  --color-gray-555: var(--text-muted);
+  --color-gray-500: var(--text-muted);
+  --color-gray-450: var(--text-muted);
+  --color-gray-400: var(--text-muted);
+
+  --color-slate-950: var(--surface-950);
+  --color-slate-900: var(--text-primary);
+  --color-slate-800: var(--text-secondary);
+  --color-slate-750: var(--text-secondary);
+  --color-slate-700: var(--text-secondary);
+  --color-slate-650: var(--text-secondary);
+  --color-slate-600: var(--text-muted);
+  --color-slate-555: var(--text-muted);
+  --color-slate-500: var(--text-muted);
+  --color-slate-450: var(--text-muted);
+  --color-slate-400: var(--text-muted);
+
+  --color-surface-900: var(--text-primary);
+  --color-surface-800: var(--text-secondary);
+  --color-surface-750: var(--text-secondary);
+  --color-surface-700: var(--text-secondary);
+  --color-surface-650: var(--text-secondary);
+  --color-surface-600: var(--text-muted);
+  --color-surface-555: var(--text-muted);
+  --color-surface-500: var(--text-muted);
+  --color-surface-450: var(--text-muted);
+  --color-surface-400: var(--text-muted);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+  --radius-pill: 9999px;
+
+  /* ── Spacing Tokens ─────────────────────────────────────── */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-100: 25rem;
+  --spacing-120: 30rem;
+  --spacing-140: 35rem;
+  --spacing-160: 40rem;
+
+  /* ── Animation Easings ──────────────────────────────────── */
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-snap: cubic-bezier(0, 0.7, 0.3, 1);
+
+  /* ── Shadows (Simplified to prevent heavy rendering glows) ── */
+  --shadow-glow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-glow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  /* ── Animations (Refined to be smooth and subtle) ── */
+  --animate-fade-in: fade-in 0.4s var(--ease-smooth) both;
+  --animate-slide-up: slide-up 0.4s var(--ease-smooth) both;
+  --animate-slide-down: slide-down 0.35s var(--ease-smooth) both;
+  --animate-scale-in: scale-in 0.3s var(--ease-smooth) both;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-mesh: none;
+  --animate-float: float 8s ease-in-out infinite;
+}
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+@keyframes mesh-drift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+@layer base {
+  /* ── Smooth Scroll ────────────────────────────────────────── */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── Body ─────────────────────────────────────────────────── */
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-surface-900);
+    background-color: var(--color-surface-50);
+    line-height: 1.6;
+    transition: background-color 0.3s var(--ease-smooth),
+                color 0.3s var(--ease-smooth);
+  }
+
+  /* ── Headings ─────────────────────────────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-text-main);
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+
+  /* ── Links ────────────────────────────────────────────────── */
+  a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+    transition: color 0.2s var(--ease-smooth);
+  }
+
+  a:hover {
+    color: var(--color-primary-500);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ── Selection ────────────────────────────────────────────── */
+  ::selection {
+    background-color: oklch(0.58 0.22 275 / 0.2);
+    color: var(--color-primary-950);
+  }
+}
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    color-scheme: dark;
+  }
+
+  html:not(.light) body {
+    color: var(--color-surface-200);
+    background-color: #0B1020;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  html:not(.light) h1,
+  html:not(.light) h2,
+  html:not(.light) h3,
+  html:not(.light) h4,
+  html:not(.light) h5,
+  html:not(.light) h6 {
+    color: var(--color-surface-900);
+  }
+
+  html:not(.light) a {
+    color: var(--color-primary-400);
+  }
+
+  html:not(.light) a:hover {
+    color: var(--color-primary-300);
+  }
+
+  html:not(.light) ::selection {
+    background-color: rgba(99, 102, 241, 0.3);
+    color: var(--color-surface-900);
+  }
+}
+
+/* ── .dark class override (JS-toggled) ────────────────────── */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  color: var(--color-surface-200);
+  background-color: #0B1020;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--color-surface-900);
+}
+
+.dark a {
+  color: var(--color-primary-400);
+}
+
+.dark a:hover {
+  color: var(--color-primary-300);
+}
+
+.dark ::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: var(--color-surface-900);
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* ── Glassmorphism ────────────────────────────────────────── */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.dark .glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s var(--ease-smooth),
+              box-shadow 0.2s var(--ease-smooth),
+              border-color 0.2s var(--ease-smooth);
+}
+
+.dark .glass:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow:
+    0 12px 30px -10px rgba(0, 0, 0, 0.45);
+}
+
+.glass-strong {
+  background: var(--card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-strong {
+  background: var(--card-bg);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Gradient Text ────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    oklch(0.58 0.22 275) 0%,
+    oklch(0.62 0.24 300) 40%,
+    oklch(0.65 0.20 330) 70%,
+    oklch(0.58 0.22 275) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(
+    135deg,
+    #6366F1 0%,
+    #8B5CF6 30%,
+    #EC4899 70%,
+    #06B6D4 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Animated Mesh Background ─────────────────────────────── */
+.bg-mesh {
+  background: linear-gradient(
+    -45deg,
+    oklch(0.97 0.02 275),
+    oklch(0.96 0.03 300),
+    oklch(0.97 0.02 235),
+    oklch(0.98 0.01 275)
+  );
+  background-size: 400% 400%;
+  animation: var(--animate-mesh);
+}
+
+.dark .bg-mesh {
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+              #0B1020;
+  background-size: 100% 100%;
+  animation: none;
+}
+
+/* ── Premium Primary Button Glow in Dark Mode ──────────────── */
+.dark button.bg-gradient-to-r.from-primary,
+.dark a.bg-gradient-to-r.from-primary {
+  position: relative;
+  overflow: visible;
+}
+
+.dark button.bg-gradient-to-r.from-primary::after,
+.dark a.bg-gradient-to-r.from-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  z-index: -1;
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 0.3s var(--ease-smooth);
+  pointer-events: none;
+}
+
+.dark button.bg-gradient-to-r.from-primary:hover::after,
+.dark a.bg-gradient-to-r.from-primary:hover::after {
+  opacity: 0.7;
+}
+
+/* ── SVG Neon Glow for Dark Mode ──────────────────────────── */
+.dark .svg-glow {
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.6));
+}
+.dark .svg-glow-primary {
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.6));
+}
+.dark .svg-glow-accent {
+  filter: drop-shadow(0 0 6px rgba(236, 72, 153, 0.6));
+}
+
+/* ── General Card Default Glows ────────────────────────────── */
+.dark .bg-card-bg {
+  background-color: rgba(27, 35, 56, 0.65);
+  border-color: rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s var(--ease-spring),
+              box-shadow 0.3s var(--ease-spring),
+              background-color 0.3s var(--ease-spring);
+}
+.dark .bg-card-bg:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 0 25px -2px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+
+/* ── Webkit (Chrome, Edge, Safari) ────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.75 0.01 265 / 0.4);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.60 0.01 265 / 0.5);
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.01 265 / 0.5);
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.45 0.01 265 / 0.6);
+  background-clip: padding-box;
+}
+
+/* ── Firefox ──────────────────────────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.75 0.01 265 / 0.4) transparent;
+}
+
+.dark * {
+  scrollbar-color: oklch(0.35 0.01 265 / 0.5) transparent;
+}
+
+/* ============================================================
+   FOCUS & ACCESSIBILITY HELPERS
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Skip to content (screen-reader) */
+.sr-skip:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary-600);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  box-shadow: var(--shadow-glow);
+}

@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# Build Outputs
+dist/
+build/
+bin/
+obj/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# Database Files (SQLite, etc.)
+backend/placify_dev.db
+backend/placementor_dev.db
+backend/database/placementor_dev.db
+*.db
+*.sqlite
+
+# Python Cache & Uploads
+backend/__pycache__/
+backend/routes/__pycache__/
+backend/services/__pycache__/
+backend/models/__pycache__/
+backend/utils/__pycache__/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# IDEs & System Files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+.gemini/
